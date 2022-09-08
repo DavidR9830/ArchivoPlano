@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ArchivosPlanos
 {
-    public partial class frmInicio : Form
+    public partial class frmhome : Form
     {
-        public frmInicio()
+        public frmhome()
         {
             InitializeComponent();
         }
@@ -30,6 +30,13 @@ namespace ArchivosPlanos
             frmXML.Show();
             this.Hide();
 
+        }
+
+        private void btnCsv_Click(object sender, EventArgs e)
+        {
+            frmCsv frmCsv = new frmCsv();
+            frmCsv.Show();
+            this.Hide();
         }
     }
 }

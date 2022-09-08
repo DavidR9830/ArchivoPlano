@@ -1,6 +1,6 @@
 ﻿namespace ArchivosPlanos
 {
-    partial class frmInicio
+    partial class frmhome
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.btnTxt = new System.Windows.Forms.Button();
             this.btXml = new System.Windows.Forms.Button();
+            this.btnCsv = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTxt
@@ -52,14 +53,25 @@
             this.btXml.UseVisualStyleBackColor = true;
             this.btXml.Click += new System.EventHandler(this.btXml_Click);
             // 
-            // frmInicio
+            // btnCsv
+            // 
+            this.btnCsv.Location = new System.Drawing.Point(546, 173);
+            this.btnCsv.Name = "btnCsv";
+            this.btnCsv.Size = new System.Drawing.Size(75, 23);
+            this.btnCsv.TabIndex = 2;
+            this.btnCsv.Text = "CSV";
+            this.btnCsv.UseVisualStyleBackColor = true;
+            this.btnCsv.Click += new System.EventHandler(this.btnCsv_Click);
+            // 
+            // frmhome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCsv);
             this.Controls.Add(this.btXml);
             this.Controls.Add(this.btnTxt);
-            this.Name = "frmInicio";
+            this.Name = "frmhome";
             this.Text = "frmInicio";
             this.ResumeLayout(false);
 
@@ -69,5 +81,6 @@
 
         private Button btnTxt;
         private Button btXml;
+        private Button btnCsv;
     }
 }

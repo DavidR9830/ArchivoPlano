@@ -64,14 +64,21 @@ namespace ArchivosPlanos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                rutaArchivo = openFileDialog.FileName;
-                File.Delete(rutaArchivo);
-                txt1.Clear();
-                MessageBox.Show("Archivo eliminado exitosamente");
+                DialogResult alerta = MessageBox.Show("Eliminará el ultimo archivo leído con exactamente lo que haya en la caja de texto.\rDesea continuar?", "Cuidado", MessageBoxButtons.OKCancel);
+                if (alerta == DialogResult.OK)
+                {
+                    File.Delete(rutaArchivo);
+                   txt1.Clear();
+                    MessageBox.Show("Archivo Eliminado con exito");
+                }
             }
-            
+            catch (Exception error)
+            {
+                MessageBox.Show("Debe leer o modificar un archivo antes de eliminarlo. " + error.Message, "Recuerde");
+            }
+
         }
     }
 }
