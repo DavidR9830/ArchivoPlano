@@ -1,16 +1,17 @@
-﻿namespace ArchivosPlanos
+﻿
+namespace ArchivosPlanos
 {
-    partial class frmXML
+    partial class Archivosplanos
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,94 +21,91 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCrear = new System.Windows.Forms.Button();
-            this.btnLeer = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.dgdXML = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdXML)).BeginInit();
+            this.txtvisual = new System.Windows.Forms.TextBox();
+            this.btnabrir = new System.Windows.Forms.Button();
+            this.btnmodificar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
-            // btnCrear
+            // txtvisual
             // 
-            this.btnCrear.Location = new System.Drawing.Point(117, 58);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 23);
-            this.btnCrear.TabIndex = 0;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            this.txtvisual.Location = new System.Drawing.Point(13, 12);
+            this.txtvisual.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtvisual.Multiline = true;
+            this.txtvisual.Name = "txtvisual";
+            this.txtvisual.Size = new System.Drawing.Size(703, 444);
+            this.txtvisual.TabIndex = 0;
             // 
-            // btnLeer
+            // btnabrir
             // 
-            this.btnLeer.Location = new System.Drawing.Point(269, 58);
-            this.btnLeer.Name = "btnLeer";
-            this.btnLeer.Size = new System.Drawing.Size(75, 23);
-            this.btnLeer.TabIndex = 1;
-            this.btnLeer.Text = "Leer";
-            this.btnLeer.UseVisualStyleBackColor = true;
-            this.btnLeer.Click += new System.EventHandler(this.btnLeer_Click);
+            this.btnabrir.Location = new System.Drawing.Point(757, 156);
+            this.btnabrir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnabrir.Name = "btnabrir";
+            this.btnabrir.Size = new System.Drawing.Size(138, 46);
+            this.btnabrir.TabIndex = 1;
+            this.btnabrir.Text = "Abrir";
+            this.btnabrir.UseVisualStyleBackColor = true;
+            this.btnabrir.Click += new System.EventHandler(this.btnabrir_Click);
             // 
-            // btnModificar
+            // btnmodificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(425, 58);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 2;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnmodificar.Location = new System.Drawing.Point(757, 226);
+            this.btnmodificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(138, 46);
+            this.btnmodificar.TabIndex = 2;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
-            // btnEliminar
+            // btneliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(563, 58);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btneliminar.Location = new System.Drawing.Point(757, 378);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(138, 45);
+            this.btneliminar.TabIndex = 3;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
-            // dgdXML
+            // openFileDialog1
             // 
-            this.dgdXML.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdXML.Location = new System.Drawing.Point(172, 159);
-            this.dgdXML.Name = "dgdXML";
-            this.dgdXML.RowTemplate.Height = 25;
-            this.dgdXML.Size = new System.Drawing.Size(406, 233);
-            this.dgdXML.TabIndex = 4;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // frmXML
+            // Archivosplanos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgdXML);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnLeer);
-            this.Controls.Add(this.btnCrear);
-            this.Name = "frmXML";
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dgdXML)).EndInit();
+            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.Controls.Add(this.btneliminar);
+            this.Controls.Add(this.btnmodificar);
+            this.Controls.Add(this.btnabrir);
+            this.Controls.Add(this.txtvisual);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "Archivosplanos";
+            this.Text = "Inicio";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Button btnCrear;
-        private Button btnLeer;
-        private Button btnModificar;
-        private Button btnEliminar;
-        private DataGridView dgdXML;
+        private System.Windows.Forms.TextBox txtvisual;
+        private System.Windows.Forms.Button btnabrir;
+        private System.Windows.Forms.Button btnmodificar;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
+

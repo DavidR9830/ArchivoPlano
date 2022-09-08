@@ -7,100 +7,97 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
+using System.IO;
 
 namespace ArchivosPlanos
 {
-    public partial class frmXML : Form
+    public partial class Archivosplanos : Form
     {
-        OpenFileDialog openFileDialog = new OpenFileDialog();
-        string rutaArchivo = string.Empty;
-        SaveFileDialog saveDialog = new SaveFileDialog();
-        public frmXML()
+        public string ARCHIVO = "";
+        public Archivosplanos()
         {
             InitializeComponent();
-            saveDialog.Filter = "xml Files | *.xml";
-            saveDialog.DefaultExt = "xml";
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            List<persona> p1 = new List<persona>();
-            XmlSerializer serial = new XmlSerializer(typeof(List<persona>));
-            p1.Add(new persona() { id = 1, nombre = "julian" });
-            p1.Add(new persona() { id = 2, nombre = "pedro" });
-
-            if (saveDialog.ShowDialog() == DialogResult.OK) 
-            {
-                rutaArchivo = saveDialog.FileName;
-
-                using (System.IO.FileStream fs = new FileStream(rutaArchivo, FileMode.Create, FileAccess.Write))
-                {
-                   
-                    serial.Serialize(fs, p1);
-                    MessageBox.Show("Creado");
-                }
-            }
-            
-        }
-
-        private void btnLeer_Click(object sender, EventArgs e)
-        {
-            List<persona> p1 = new List<persona>();
-            XmlSerializer serial = new XmlSerializer(typeof(List<persona>));
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            
-            {
-                rutaArchivo = openFileDialog.FileName;
-                using (System.IO.FileStream fs = new FileStream(rutaArchivo, FileMode.Open, FileAccess.Read)) 
-                {
-                    p1 = serial.Deserialize(fs) as List<persona>;
-                    
-                }
-                dgdXML.DataSource = p1;
-
-            }
-                
-          
-            
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-            List<persona> p1 = new List<persona>();
-            XmlSerializer serial = new XmlSerializer(typeof(List<persona>));
-            
-               using (System.IO.FileStream fs = new FileStream(rutaArchivo, FileMode.Create, FileAccess.Write))
-                {
-
-                    serial.Serialize(fs, dgdXML.DataSource);
-                    MessageBox.Show("Modificado");
-                }
-            
-
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+        public void abrir()
         {
             try
             {
-                DialogResult alerta = MessageBox.Show("Eliminará el ultimo archivo leído con exactamente lo que haya en la caja de texto.\rDesea continuar?", "Cuidado", MessageBoxButtons.OKCancel);
-                if (alerta == DialogResult.OK)
+                this.openFileDialog1.ShowDialog();
+
+                if (!string.IsNullOrEmpty(this.openFileDialog1.FileName))
                 {
-                    File.Delete(rutaArchivo);
-                    dgdXML.Columns.Clear();
-                    MessageBox.Show("Archivo Eliminado con exito");
+                    ARCHIVO = this.openFileDialog1.FileName;
+                    StreamReader objReader = new StreamReader(ARCHIVO);
+                    txtvisual.Text = objReader.ReadLine();
+                    objReader.Close();
+                    try
+                    {
+                        StreamReader sw = new StreamReader(ARCHIVO);
+                        string linea = "";
+                        linea = sw.ReadLine();
+                        if (linea != null)
+                        {
+                            while (linea != null)
+                            {
+                                string[] dato = linea.Split();
+                                linea = sw.ReadLine();
+                                txtvisual.Text = string.Format("{0}{1}{2}", txtvisual.Text, Environment.NewLine, linea);
+                            }
+                        }
+                        sw.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No ha seleccionado nada");
+                    }
                 }
+
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe leer o modificar un archivo antes de eliminarlo. " + error.Message, "Recuerde");
+                MessageBox.Show("Error: " + ex.ToString());
             }
+
+        }
+        private void btnabrir_Click(object sender, EventArgs e)
+        {
+            txtvisual.Text="";
+            abrir();
+        }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+            string[] lineas = { txtvisual.Text };
+            using(StreamWriter sw = new StreamWriter(ARCHIVO))
+            {
+                foreach(string linea in lineas)
+                {
+                    sw.WriteLine(linea);
+                }
+                sw.Close();
+            }
+        }
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            this.openFileDialog1.FileName = null;
+            this.openFileDialog1.ShowDialog();
+
+            if (!string.IsNullOrEmpty(this.openFileDialog1.FileName))
+            {
+                ARCHIVO = this.openFileDialog1.FileName;
+                File.Delete(ARCHIVO);
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado nada");
+            }
+            txtvisual.Text="";
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtvisual.Text = "";
         }
     }
 }
-
-
