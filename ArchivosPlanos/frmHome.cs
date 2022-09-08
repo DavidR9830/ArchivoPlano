@@ -38,5 +38,12 @@ namespace ArchivosPlanos
             frmCsv.Show();
             this.Hide();
         }
+
+        private void btnRtf_Click(object sender, EventArgs e)
+        {
+            frmRtf frmRtf = new frmRtf();
+            frmRtf.Show();
+            this.Hide();
+        }
     }
 }

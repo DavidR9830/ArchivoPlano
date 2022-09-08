@@ -58,7 +58,7 @@ namespace ArchivosPlanos
                     p1 = serial.Deserialize(fs) as List<persona>;
                     
                 }
-                dbgrdXML.DataSource = p1;
+                dgdXML.DataSource = p1;
 
             }
                 
@@ -75,7 +75,7 @@ namespace ArchivosPlanos
                using (System.IO.FileStream fs = new FileStream(rutaArchivo, FileMode.Create, FileAccess.Write))
                 {
 
-                    serial.Serialize(fs, dbgrdXML.DataSource);
+                    serial.Serialize(fs, dgdXML.DataSource);
                     MessageBox.Show("Modificado");
                 }
             
@@ -91,7 +91,7 @@ namespace ArchivosPlanos
                 if (alerta == DialogResult.OK)
                 {
                     File.Delete(rutaArchivo);
-                    dbgrdXML.Columns.Clear();
+                    dgdXML.Columns.Clear();
                     MessageBox.Show("Archivo Eliminado con exito");
                 }
             }

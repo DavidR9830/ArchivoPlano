@@ -25,8 +25,8 @@ namespace ArchivosPlanos
         private void BtnLeerCSV_Click(object sender, EventArgs e)
         {
             bool columnasLeidas = false;
-            dgvCSV.Rows.Clear();
-            dgvCSV.Columns.Clear();
+            dgdCSV.Rows.Clear();
+            dgdCSV.Columns.Clear();
             OpenFileDialog fileDialog = new OpenFileDialog
             {
                 Filter = "Archivos CSV (*.csv) | *.csv"
@@ -52,13 +52,13 @@ namespace ArchivosPlanos
                                         {
                                             HeaderText = columnas //el texto de la columna va a ser lo que se guardo en 'columnas' por el foreach
                                         };
-                                        dgvCSV.Columns.Add(dgvColumnas);
+                                        dgdCSV.Columns.Add(dgvColumnas);
                                     }                                    
                                     columnasLeidas=true;//despues de haber leido la primera linea, dejará de agregar las columnas 
                                 }
                                 else
                                 {
-                                    dgvCSV.Rows.Add(valores);//al estar en el while, va con la siguiente linea y agrega las filas
+                                    dgdCSV.Rows.Add(valores);//al estar en el while, va con la siguiente linea y agrega las filas
                                 }
                                 
                             }                            

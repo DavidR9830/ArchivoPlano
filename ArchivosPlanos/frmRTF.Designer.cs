@@ -1,6 +1,6 @@
 ﻿namespace ArchivosPlanos
 {
-    partial class frmXML
+    partial class frmRtf
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,12 @@
             this.btnLeer = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dgdXML = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgdXML)).BeginInit();
+            this.rtbArchivo = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(117, 58);
+            this.btnCrear.Location = new System.Drawing.Point(141, 99);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 0;
@@ -48,7 +47,7 @@
             // 
             // btnLeer
             // 
-            this.btnLeer.Location = new System.Drawing.Point(269, 58);
+            this.btnLeer.Location = new System.Drawing.Point(275, 101);
             this.btnLeer.Name = "btnLeer";
             this.btnLeer.Size = new System.Drawing.Size(75, 23);
             this.btnLeer.TabIndex = 1;
@@ -58,7 +57,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(425, 58);
+            this.btnModificar.Location = new System.Drawing.Point(405, 99);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 2;
@@ -68,7 +67,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(563, 58);
+            this.btnEliminar.Location = new System.Drawing.Point(556, 99);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -76,28 +75,26 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // dgdXML
+            // rtbArchivo
             // 
-            this.dgdXML.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgdXML.Location = new System.Drawing.Point(172, 159);
-            this.dgdXML.Name = "dgdXML";
-            this.dgdXML.RowTemplate.Height = 25;
-            this.dgdXML.Size = new System.Drawing.Size(406, 233);
-            this.dgdXML.TabIndex = 4;
+            this.rtbArchivo.Location = new System.Drawing.Point(168, 171);
+            this.rtbArchivo.Name = "rtbArchivo";
+            this.rtbArchivo.Size = new System.Drawing.Size(463, 219);
+            this.rtbArchivo.TabIndex = 4;
+            this.rtbArchivo.Text = "";
             // 
-            // frmXML
+            // frmRtf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgdXML);
+            this.Controls.Add(this.rtbArchivo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnLeer);
             this.Controls.Add(this.btnCrear);
-            this.Name = "frmXML";
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dgdXML)).EndInit();
+            this.Name = "frmRtf";
+            this.Text = "frmRtf";
             this.ResumeLayout(false);
 
         }
@@ -108,6 +105,6 @@
         private Button btnLeer;
         private Button btnModificar;
         private Button btnEliminar;
-        private DataGridView dgdXML;
+        private RichTextBox rtbArchivo;
     }
 }

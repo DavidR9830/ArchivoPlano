@@ -31,18 +31,19 @@ namespace ArchivosPlanos
         {
             this.btnLeerCSV = new System.Windows.Forms.Button();
             this.btnModificarCSV = new System.Windows.Forms.Button();
-            this.dgvCSV = new System.Windows.Forms.DataGridView();
+            this.dgdCSV = new System.Windows.Forms.DataGridView();
             this.btnCrearCSV = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtArchivo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdCSV)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLeerCSV
             // 
-            this.btnLeerCSV.Location = new System.Drawing.Point(987, 284);
+            this.btnLeerCSV.Location = new System.Drawing.Point(1152, 328);
+            this.btnLeerCSV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLeerCSV.Name = "btnLeerCSV";
-            this.btnLeerCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnLeerCSV.Size = new System.Drawing.Size(88, 27);
             this.btnLeerCSV.TabIndex = 2;
             this.btnLeerCSV.Text = "Leer";
             this.btnLeerCSV.UseVisualStyleBackColor = true;
@@ -50,30 +51,33 @@ namespace ArchivosPlanos
             // 
             // btnModificarCSV
             // 
-            this.btnModificarCSV.Location = new System.Drawing.Point(987, 366);
+            this.btnModificarCSV.Location = new System.Drawing.Point(1152, 422);
+            this.btnModificarCSV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificarCSV.Name = "btnModificarCSV";
-            this.btnModificarCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnModificarCSV.Size = new System.Drawing.Size(88, 27);
             this.btnModificarCSV.TabIndex = 3;
             this.btnModificarCSV.Text = "Modificar";
             this.btnModificarCSV.UseVisualStyleBackColor = true;
             this.btnModificarCSV.Click += new System.EventHandler(this.btnModificarCSV_Click);
             // 
-            // dgvCSV
+            // dgdCSV
             // 
-            this.dgvCSV.AllowUserToDeleteRows = false;
-            this.dgvCSV.AllowUserToOrderColumns = true;
-            this.dgvCSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCSV.Location = new System.Drawing.Point(398, 13);
-            this.dgvCSV.Name = "dgvCSV";
-            this.dgvCSV.ReadOnly = true;
-            this.dgvCSV.Size = new System.Drawing.Size(533, 505);
-            this.dgvCSV.TabIndex = 5;
+            this.dgdCSV.AllowUserToDeleteRows = false;
+            this.dgdCSV.AllowUserToOrderColumns = true;
+            this.dgdCSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgdCSV.Location = new System.Drawing.Point(464, 15);
+            this.dgdCSV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgdCSV.Name = "dgdCSV";
+            this.dgdCSV.ReadOnly = true;
+            this.dgdCSV.Size = new System.Drawing.Size(622, 583);
+            this.dgdCSV.TabIndex = 5;
             // 
             // btnCrearCSV
             // 
-            this.btnCrearCSV.Location = new System.Drawing.Point(987, 209);
+            this.btnCrearCSV.Location = new System.Drawing.Point(1152, 241);
+            this.btnCrearCSV.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCrearCSV.Name = "btnCrearCSV";
-            this.btnCrearCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnCrearCSV.Size = new System.Drawing.Size(88, 27);
             this.btnCrearCSV.TabIndex = 1;
             this.btnCrearCSV.Text = "Crear";
             this.btnCrearCSV.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@ namespace ArchivosPlanos
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(987, 442);
+            this.btnEliminar.Location = new System.Drawing.Point(1152, 510);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(88, 27);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -91,26 +96,28 @@ namespace ArchivosPlanos
             // 
             // txtArchivo
             // 
-            this.txtArchivo.Location = new System.Drawing.Point(12, 12);
+            this.txtArchivo.Location = new System.Drawing.Point(14, 14);
+            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtArchivo.Multiline = true;
             this.txtArchivo.Name = "txtArchivo";
-            this.txtArchivo.Size = new System.Drawing.Size(380, 506);
+            this.txtArchivo.Size = new System.Drawing.Size(443, 583);
             this.txtArchivo.TabIndex = 6;
             // 
-            // frmInicio
+            // frmCsv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 530);
+            this.ClientSize = new System.Drawing.Size(1314, 612);
             this.Controls.Add(this.txtArchivo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrearCSV);
-            this.Controls.Add(this.dgvCSV);
+            this.Controls.Add(this.dgdCSV);
             this.Controls.Add(this.btnModificarCSV);
             this.Controls.Add(this.btnLeerCSV);
-            this.Name = "frmInicio";
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "frmCsv";
             this.Text = "Inicio";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgdCSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +126,7 @@ namespace ArchivosPlanos
         #endregion
         private System.Windows.Forms.Button btnLeerCSV;
         private System.Windows.Forms.Button btnModificarCSV;
-        private System.Windows.Forms.DataGridView dgvCSV;
+        private System.Windows.Forms.DataGridView dgdCSV;
         private System.Windows.Forms.Button btnCrearCSV;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtArchivo;
