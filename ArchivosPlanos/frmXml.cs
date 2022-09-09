@@ -37,16 +37,12 @@ namespace ArchivosPlanos
                     try
                     {
                         rutaArchivo = fileDialog.FileName;
-                        StreamReader sw = new StreamReader(rutaArchivo);
-                        string linea;
-                        if ((myStream = fileDialog.OpenFile()) != null)
-                        {
-                            while ((linea = sw.ReadLine()) != null)
-                            {
-                                txtArchivo.Text = string.Format("{0}{1}{2}", txtArchivo.Text, Environment.NewLine, linea);
-                            }
-                        }
-                        sw.Close();
+                        var fileStream = new FileStream(rutaArchivo, FileMode.Open);
+                        var leer = new StreamReader(fileStream);
+                        txtArchivo.Text = leer.ReadToEnd();
+                        leer.Close();
+                        
+
                     }
                     catch (Exception error)
                     {
@@ -62,7 +58,7 @@ namespace ArchivosPlanos
         }
 
         private void btnModificarXML_Click(object sender, EventArgs e)
-        {
+        { 
             DialogResult alerta = MessageBox.Show("Modificará el ultimo archivo leído con exactamente lo que haya en la caja de texto.\rDesea continuar?", "Cuidado", MessageBoxButtons.OKCancel);
             if (alerta == DialogResult.OK)
             {
