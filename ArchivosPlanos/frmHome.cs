@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ArchivosPlanos
 {
-    public partial class frmhome : Form
+    public partial class frmHome : Form
     {
-        public frmhome()
+        public frmHome()
         {
             InitializeComponent();
         }
@@ -26,7 +26,8 @@ namespace ArchivosPlanos
 
         private void btXml_Click(object sender, EventArgs e)
         {
-            
+            frmXml frmXml = new frmXml();
+            frmXml.Show();
             this.Hide();
 
         }

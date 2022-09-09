@@ -80,5 +80,12 @@ namespace ArchivosPlanos
             }
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmHome frmHome = new frmHome();
+            frmHome.Show();
+            this.Hide();
+        }
     }
 }

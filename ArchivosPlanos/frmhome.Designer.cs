@@ -1,6 +1,6 @@
 ﻿namespace ArchivosPlanos
 {
-    partial class frmhome
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.
@@ -74,7 +74,7 @@
             this.btnRtf.UseVisualStyleBackColor = true;
             this.btnRtf.Click += new System.EventHandler(this.btnRtf_Click);
             // 
-            // frmhome
+            // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,8 +83,8 @@
             this.Controls.Add(this.btnCsv);
             this.Controls.Add(this.btXml);
             this.Controls.Add(this.btnTxt);
-            this.Name = "frmhome";
-            this.Text = "frmInicio";
+            this.Name = "frmHome";
+            this.Text = "Inicio";
             this.ResumeLayout(false);
 
         }

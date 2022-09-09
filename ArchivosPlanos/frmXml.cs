@@ -8,48 +8,49 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Net.WebRequestMethods;
+using File = System.IO.File;
 
 namespace ArchivosPlanos
 {
-    public partial class Archivosplanos : Form
+    public partial class frmXml : Form
     {
-        public string ARCHIVO = "";
-        public Archivosplanos()
+        
+        string rutaArchivo = string.Empty;
+        public frmXml()
         {
             InitializeComponent();
         }
+        OpenFileDialog fileDialog = new OpenFileDialog()
+        {
+            Filter = "Archivo (*.xml) | *.xml"
+        };
+        private Stream myStream;
 
-        public void abrir()
+        private void btnLeerXML_Click(object sender, EventArgs e)
         {
             try
             {
-                this.openFileDialog1.ShowDialog();
-
-                if (!string.IsNullOrEmpty(this.openFileDialog1.FileName))
-                {
-                    ARCHIVO = this.openFileDialog1.FileName;
-                    StreamReader objReader = new StreamReader(ARCHIVO);
-                    txtvisual.Text = objReader.ReadLine();
-                    objReader.Close();
+                txtArchivo.Clear();
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {                         
                     try
                     {
-                        StreamReader sw = new StreamReader(ARCHIVO);
-                        string linea = "";
-                        linea = sw.ReadLine();
-                        if (linea != null)
+                        rutaArchivo = fileDialog.FileName;
+                        StreamReader sw = new StreamReader(rutaArchivo);
+                        string linea;
+                        if ((myStream = fileDialog.OpenFile()) != null)
                         {
-                            while (linea != null)
+                            while ((linea = sw.ReadLine()) != null)
                             {
-                                string[] dato = linea.Split();
-                                linea = sw.ReadLine();
-                                txtvisual.Text = string.Format("{0}{1}{2}", txtvisual.Text, Environment.NewLine, linea);
+                                txtArchivo.Text = string.Format("{0}{1}{2}", txtArchivo.Text, Environment.NewLine, linea);
                             }
                         }
                         sw.Close();
                     }
-                    catch (Exception ex)
+                    catch (Exception error)
                     {
-                        MessageBox.Show("No ha seleccionado nada");
+                        MessageBox.Show("No ha seleccionado nada. " + error.Message);
                     }
                 }
 
@@ -58,46 +59,64 @@ namespace ArchivosPlanos
             {
                 MessageBox.Show("Error: " + ex.ToString());
             }
-
-        }
-        private void btnabrir_Click(object sender, EventArgs e)
-        {
-            txtvisual.Text="";
-            abrir();
         }
 
-        private void btnmodificar_Click(object sender, EventArgs e)
+        private void btnModificarXML_Click(object sender, EventArgs e)
         {
-            string[] lineas = { txtvisual.Text };
-            using(StreamWriter sw = new StreamWriter(ARCHIVO))
+            DialogResult alerta = MessageBox.Show("Modificará el ultimo archivo leído con exactamente lo que haya en la caja de texto.\rDesea continuar?", "Cuidado", MessageBoxButtons.OKCancel);
+            if (alerta == DialogResult.OK)
             {
-                foreach(string linea in lineas)
+                string[] lineas = { txtArchivo.Text };
+                using (StreamWriter sw = new StreamWriter(rutaArchivo))
                 {
-                    sw.WriteLine(linea);
+                    foreach (string linea in lineas)
+                    {
+                        sw.WriteLine(linea);
+                    }
+                    sw.Close();
                 }
-                sw.Close();
+                MessageBox.Show("Archivo modificado con exito", "Cambios realizados");
             }
         }
-        private void btneliminar_Click(object sender, EventArgs e)
+        private void btnEliminarXML_Click(object sender, EventArgs e)
         {
-            this.openFileDialog1.FileName = null;
-            this.openFileDialog1.ShowDialog();
-
-            if (!string.IsNullOrEmpty(this.openFileDialog1.FileName))
+            try
             {
-                ARCHIVO = this.openFileDialog1.FileName;
-                File.Delete(ARCHIVO);
+                DialogResult alerta = MessageBox.Show("Eliminará el ultimo archivo leído con exactamente lo que haya en la caja de texto.\rDesea continuar?", "Cuidado", MessageBoxButtons.OKCancel);
+                if (alerta == DialogResult.OK)
+                {
+                    File.Delete(rutaArchivo);
+                    txtArchivo.Clear();
+                    MessageBox.Show("Archivo Eliminado con exito");
+                }
             }
-            else
+            catch (Exception error)
             {
-                MessageBox.Show("No ha seleccionado nada");
+                MessageBox.Show("Debe leer o modificar un archivo antes de eliminarlo. " + error.Message, "Recuerde");
             }
-            txtvisual.Text="";
         }
 
-        private void btnlimpiar_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            txtvisual.Text = "";
+            frmHome frmHome = new frmHome();
+            frmHome.Show();
+            this.Hide();
+        }
+
+        private void btnCrearXML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Filter = "Archivos XML (*.xml)| *.xml"
+            };
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter streamWriter = new StreamWriter(saveDialog.FileName);
+                streamWriter.Write(txtArchivo.Text);
+                MessageBox.Show("Archivo creado con exito");
+                streamWriter.Close();
+                txtArchivo.Clear();
+            }
         }
     }
 }

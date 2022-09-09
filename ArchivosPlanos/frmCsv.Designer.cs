@@ -35,6 +35,7 @@ namespace ArchivosPlanos
             this.btnCrearCSV = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtArchivo = new System.Windows.Forms.TextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgdCSV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,22 @@ namespace ArchivosPlanos
             this.txtArchivo.Size = new System.Drawing.Size(443, 583);
             this.txtArchivo.TabIndex = 6;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(1131, 543);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(138, 45);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmCsv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 612);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtArchivo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCrearCSV);
@@ -116,7 +128,7 @@ namespace ArchivosPlanos
             this.Controls.Add(this.btnLeerCSV);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmCsv";
-            this.Text = "Inicio";
+            this.Text = "Archivos CSV";
             ((System.ComponentModel.ISupportInitialize)(this.dgdCSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,6 +142,7 @@ namespace ArchivosPlanos
         private System.Windows.Forms.Button btnCrearCSV;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtArchivo;
+        private Button btnVolver;
     }
 }
 

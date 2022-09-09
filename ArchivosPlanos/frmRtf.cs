@@ -88,5 +88,12 @@ namespace ArchivosPlanos
                 MessageBox.Show("Debe leer o modificar un archivo antes de eliminarlo. " + error.Message, "Recuerde");
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmHome frmHome = new frmHome();
+            frmHome.Show();
+            this.Hide();
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.rtbArchivo = new System.Windows.Forms.RichTextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCrear
@@ -83,18 +84,29 @@
             this.rtbArchivo.TabIndex = 4;
             this.rtbArchivo.Text = "";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(637, 88);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(138, 45);
+            this.btnVolver.TabIndex = 6;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmRtf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.rtbArchivo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnLeer);
             this.Controls.Add(this.btnCrear);
             this.Name = "frmRtf";
-            this.Text = "frmRtf";
+            this.Text = "Archivos RTF";
             this.ResumeLayout(false);
 
         }
@@ -106,5 +118,6 @@
         private Button btnModificar;
         private Button btnEliminar;
         private RichTextBox rtbArchivo;
+        private Button btnVolver;
     }
 }

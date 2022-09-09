@@ -1,5 +1,8 @@
+using System.Runtime.CompilerServices;
+
 namespace ArchivosPlanos
 {
+   
     internal static class Program
     {
         /// <summary>
@@ -11,7 +14,8 @@ namespace ArchivosPlanos
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmhome());
+            Application.Run(new frmHome());
         }
+       
     }
 }

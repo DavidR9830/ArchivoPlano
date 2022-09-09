@@ -1,7 +1,7 @@
 ﻿
 namespace ArchivosPlanos
 {
-    partial class Archivosplanos
+    partial class frmXml
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,71 +29,90 @@ namespace ArchivosPlanos
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtvisual = new System.Windows.Forms.TextBox();
-            this.btnabrir = new System.Windows.Forms.Button();
-            this.btnmodificar = new System.Windows.Forms.Button();
-            this.btneliminar = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtArchivo = new System.Windows.Forms.TextBox();
+            this.btnLeerXML = new System.Windows.Forms.Button();
+            this.btnModificarXML = new System.Windows.Forms.Button();
+            this.btnEliminarXML = new System.Windows.Forms.Button();
+            this.btnCrearXML = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtvisual
+            // txtArchivo
             // 
-            this.txtvisual.Location = new System.Drawing.Point(13, 12);
-            this.txtvisual.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtvisual.Multiline = true;
-            this.txtvisual.Name = "txtvisual";
-            this.txtvisual.Size = new System.Drawing.Size(703, 444);
-            this.txtvisual.TabIndex = 0;
+            this.txtArchivo.Location = new System.Drawing.Point(13, 12);
+            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtArchivo.Multiline = true;
+            this.txtArchivo.Name = "txtArchivo";
+            this.txtArchivo.Size = new System.Drawing.Size(703, 444);
+            this.txtArchivo.TabIndex = 0;
             // 
-            // btnabrir
+            // btnLeerXML
             // 
-            this.btnabrir.Location = new System.Drawing.Point(757, 156);
-            this.btnabrir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnabrir.Name = "btnabrir";
-            this.btnabrir.Size = new System.Drawing.Size(138, 46);
-            this.btnabrir.TabIndex = 1;
-            this.btnabrir.Text = "Abrir";
-            this.btnabrir.UseVisualStyleBackColor = true;
-            this.btnabrir.Click += new System.EventHandler(this.btnabrir_Click);
+            this.btnLeerXML.Location = new System.Drawing.Point(757, 156);
+            this.btnLeerXML.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnLeerXML.Name = "btnLeerXML";
+            this.btnLeerXML.Size = new System.Drawing.Size(138, 46);
+            this.btnLeerXML.TabIndex = 1;
+            this.btnLeerXML.Text = "Leer";
+            this.btnLeerXML.UseVisualStyleBackColor = true;
+            this.btnLeerXML.Click += new System.EventHandler(this.btnLeerXML_Click);
             // 
-            // btnmodificar
+            // btnModificarXML
             // 
-            this.btnmodificar.Location = new System.Drawing.Point(757, 226);
-            this.btnmodificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnmodificar.Name = "btnmodificar";
-            this.btnmodificar.Size = new System.Drawing.Size(138, 46);
-            this.btnmodificar.TabIndex = 2;
-            this.btnmodificar.Text = "Modificar";
-            this.btnmodificar.UseVisualStyleBackColor = true;
-            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
+            this.btnModificarXML.Location = new System.Drawing.Point(757, 226);
+            this.btnModificarXML.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnModificarXML.Name = "btnModificarXML";
+            this.btnModificarXML.Size = new System.Drawing.Size(138, 46);
+            this.btnModificarXML.TabIndex = 2;
+            this.btnModificarXML.Text = "Modificar";
+            this.btnModificarXML.UseVisualStyleBackColor = true;
+            this.btnModificarXML.Click += new System.EventHandler(this.btnModificarXML_Click);
             // 
-            // btneliminar
+            // btnEliminarXML
             // 
-            this.btneliminar.Location = new System.Drawing.Point(757, 378);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(138, 45);
-            this.btneliminar.TabIndex = 3;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            this.btnEliminarXML.Location = new System.Drawing.Point(757, 300);
+            this.btnEliminarXML.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEliminarXML.Name = "btnEliminarXML";
+            this.btnEliminarXML.Size = new System.Drawing.Size(138, 45);
+            this.btnEliminarXML.TabIndex = 3;
+            this.btnEliminarXML.Text = "Eliminar";
+            this.btnEliminarXML.UseVisualStyleBackColor = true;
+            this.btnEliminarXML.Click += new System.EventHandler(this.btnEliminarXML_Click);
             // 
-            // openFileDialog1
+            // btnCrearXML
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.btnCrearXML.Location = new System.Drawing.Point(757, 89);
+            this.btnCrearXML.Name = "btnCrearXML";
+            this.btnCrearXML.Size = new System.Drawing.Size(138, 49);
+            this.btnCrearXML.TabIndex = 4;
+            this.btnCrearXML.Text = "Crear";
+            this.btnCrearXML.UseVisualStyleBackColor = true;
+            this.btnCrearXML.Click += new System.EventHandler(this.btnCrearXML_Click);
             // 
-            // Archivosplanos
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(757, 365);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(138, 45);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // frmXml
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 519);
-            this.Controls.Add(this.btneliminar);
-            this.Controls.Add(this.btnmodificar);
-            this.Controls.Add(this.btnabrir);
-            this.Controls.Add(this.txtvisual);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnCrearXML);
+            this.Controls.Add(this.btnEliminarXML);
+            this.Controls.Add(this.btnModificarXML);
+            this.Controls.Add(this.btnLeerXML);
+            this.Controls.Add(this.txtArchivo);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Archivosplanos";
-            this.Text = "Inicio";
+            this.Name = "frmXml";
+            this.Text = "Archivos XML";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,11 +120,12 @@ namespace ArchivosPlanos
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtvisual;
-        private System.Windows.Forms.Button btnabrir;
-        private System.Windows.Forms.Button btnmodificar;
-        private System.Windows.Forms.Button btneliminar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtArchivo;
+        private System.Windows.Forms.Button btnLeerXML;
+        private System.Windows.Forms.Button btnModificarXML;
+        private System.Windows.Forms.Button btnEliminarXML;
+        private Button btnCrearXML;
+        private Button btnVolver;
     }
 }
 
