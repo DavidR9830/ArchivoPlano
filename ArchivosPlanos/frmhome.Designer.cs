@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnTxt = new System.Windows.Forms.Button();
-            this.btXml = new System.Windows.Forms.Button();
+            this.btnXml = new System.Windows.Forms.Button();
             this.btnCsv = new System.Windows.Forms.Button();
             this.btnRtf = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,15 +44,15 @@
             this.btnTxt.UseVisualStyleBackColor = true;
             this.btnTxt.Click += new System.EventHandler(this.btnTxt_Click);
             // 
-            // btXml
+            // btnXml
             // 
-            this.btXml.Location = new System.Drawing.Point(273, 173);
-            this.btXml.Name = "btXml";
-            this.btXml.Size = new System.Drawing.Size(75, 23);
-            this.btXml.TabIndex = 1;
-            this.btXml.Text = "XML";
-            this.btXml.UseVisualStyleBackColor = true;
-            this.btXml.Click += new System.EventHandler(this.btXml_Click);
+            this.btnXml.Location = new System.Drawing.Point(273, 173);
+            this.btnXml.Name = "btnXml";
+            this.btnXml.Size = new System.Drawing.Size(75, 23);
+            this.btnXml.TabIndex = 1;
+            this.btnXml.Text = "XML";
+            this.btnXml.UseVisualStyleBackColor = true;
+            this.btnXml.Click += new System.EventHandler(this.btnXml_Click);
             // 
             // btnCsv
             // 
@@ -81,7 +81,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRtf);
             this.Controls.Add(this.btnCsv);
-            this.Controls.Add(this.btXml);
+            this.Controls.Add(this.btnXml);
             this.Controls.Add(this.btnTxt);
             this.Name = "frmHome";
             this.Text = "Inicio";
@@ -92,7 +92,7 @@
         #endregion
 
         private Button btnTxt;
-        private Button btXml;
+        private Button btnXml;
         private Button btnCsv;
         private Button btnRtf;
     }

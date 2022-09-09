@@ -24,7 +24,7 @@ namespace ArchivosPlanos
             this.Hide();
         }
 
-        private void btXml_Click(object sender, EventArgs e)
+        private void btnXml_Click(object sender, EventArgs e)
         {
             frmXml frmXml = new frmXml();
             frmXml.Show();
